@@ -1,0 +1,19 @@
+{
+    "name": "ns-slider",
+    "version": "0.0.1",
+    "description": "Netstation slider web component",
+    "license": "other",
+    "main": "dist/ns-slider.html",
+    "keywords": [
+        "polymer",
+        "web-components"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ],
+    "dependencies": {
+        "polymer": "Polymer/polymer#^0.8"
+    }
+}
