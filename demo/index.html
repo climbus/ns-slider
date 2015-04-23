@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>&lt;ns-slider&gt;</title>
 
-    <!-- Importing Web Component's Polyfill -->
     <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
     <style type="text/css">
@@ -19,7 +18,21 @@
 <body>
 
     <h1>This is slider demo</h1>
-    <ns-slider></ns-slider>
+    
+    <ns-slider>
+    	<div class="slide">
+            <img src="../demo/images/1.jpg" />
+            <div class="title">Slider title 1</div>
+        </div>
+        <div class="slide">
+            <img src="../demo/images/2.jpg" />
+            <div class="title">Slider title 2</div>
+        </div>
+        <div class="slide">
+            <img src="../demo/images/3.jpg" />
+            <div class="title">Slider title 3</div>
+        </div>
+    </ns-slider>
     
 </body>
 </html>

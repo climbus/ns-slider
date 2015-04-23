@@ -7,6 +7,9 @@
             position: relative;
             width: 1028px;
             height: 683px;
+            top: 0px;
+            left: 0px;
+            overflow: hidden;
         }
 
         ::content .title {
@@ -22,7 +25,7 @@
             position: absolute;
             font-size: 64px;
             font-weight: bold;
-            color: white;
+            color: #CCCCCC;
         }
 
         #next {
@@ -39,14 +42,20 @@
             display: none;
         }
 
+        .btn.active {
+            cursor: pointer;
+            color: white;
+        }
+
     </style>
     <template>
         <div id="slider">
-            <content></content>
+            <content style="position: relative; top: 0px; left: 0px;"></content>
             <a id="prev" class="btn">&lt;</a>
-            <a id="next" class="btn">&gt;</a>
+            <a id="next" class="btn active">&gt;</a>
         </div>
     </template>
 </dom-module>
 
 <script src="./ns-slider.js"></script>
+

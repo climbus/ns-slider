@@ -35,7 +35,7 @@ module.exports = function(driver) {
   	});
 
   	it("should has buttons", function (done) {
-  		driver.findElements(webdriver.By.xpath("//ns-slider//span[@id='next'] | //ns-slider//span[@id='prev']"))
+  		driver.findElements(webdriver.By.xpath("//ns-slider//a[@id='next'] | //ns-slider//a[@id='prev']"))
           .then(function(elms) {
               expect(elms.length).toBe(2);
               done();
@@ -58,6 +58,7 @@ module.exports = function(driver) {
           	  done();
         });
   	});
+
   	it("should show next image on next", function (done) {
   		driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '1.jpg')]")).isDisplayed()
   			.then(function(present) {
@@ -77,6 +78,57 @@ module.exports = function(driver) {
 				  			});
 					});
   			});
+	});
+
+	it("should end on last element", function (done) {
+
+		driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click().then(function() {
+			driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click().then(function() {
+				driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click().then(function() {
+					driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '3.jpg')]")).isDisplayed()
+						.then(function(present) {
+							expect(present).toBe(true);
+							done();
+						});
+				});
+			});
+		});
+	});
+
+
+  	it("should show previos image on prev", function (done) {
+  		
+		driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click().then(function() {
+	  		driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '2.jpg')]")).isDisplayed()
+	  			.then(function(present) {
+	  				expect(present).toBe(true);
+	  				driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '1.jpg')]")).isDisplayed()
+	  					.then(function(present) {
+	  						expect(present).toBe(false);
+	  						driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='prev']")).click().then(function() {
+		  						driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '2.jpg')]")).isDisplayed()
+						  			.then(function(present) {
+						  				expect(present).toBe(false);
+						  				driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '1.jpg')]")).isDisplayed()
+						  					.then(function(present) {
+						  						expect(present).toBe(true);
+						  						done();
+						  					});
+						  			});
+						  	});
+						});
+	  			});
+  		});
+	});
+
+	it("should end on first element", function (done) {
+		driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='prev']")).click().then(function() {
+			driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '1.jpg')]")).isDisplayed()
+				.then(function(present) {
+					expect(present).toBe(true);
+					done();
+				});
+		});
 	});
   });
 }
