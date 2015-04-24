@@ -67,24 +67,29 @@ module.exports = function(driver) {
   					.then(function(present) {
   						expect(present).toBe(false);
   						driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click();
-  						driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '1.jpg')]")).isDisplayed()
-				  			.then(function(present) {
-				  				expect(present).toBe(false);
-				  				driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '2.jpg')]")).isDisplayed()
-				  					.then(function(present) {
-				  						expect(present).toBe(true);
-				  						done();
-				  					});
-				  			});
+  						driver.sleep(1000).then(function() {
+	  						driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '1.jpg')]")).isDisplayed()
+					  			.then(function(present) {
+					  				expect(present).toBe(false);
+					  				driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '2.jpg')]")).isDisplayed()
+					  					.then(function(present) {
+					  						expect(present).toBe(true);
+					  						done();
+					  					});
+					  			});
+	  					});
 					});
   			});
 	});
 
 	it("should end on last element", function (done) {
 
-		driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click().then(function() {
-			driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click().then(function() {
-				driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click().then(function() {
+		driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click();
+		driver.sleep(1000).then(function() {
+			driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click();
+			driver.sleep(1000).then(function() {
+				driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click();
+				driver.sleep(1000).then(function() {
 					driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '3.jpg')]")).isDisplayed()
 						.then(function(present) {
 							expect(present).toBe(true);
@@ -98,14 +103,16 @@ module.exports = function(driver) {
 
   	it("should show previos image on prev", function (done) {
   		
-		driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click().then(function() {
+		driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='next']")).click();
+		driver.sleep(1000).then(function() {
 	  		driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '2.jpg')]")).isDisplayed()
 	  			.then(function(present) {
 	  				expect(present).toBe(true);
 	  				driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '1.jpg')]")).isDisplayed()
 	  					.then(function(present) {
 	  						expect(present).toBe(false);
-	  						driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='prev']")).click().then(function() {
+	  						driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='prev']")).click();
+	  						driver.sleep(1000).then(function() {
 		  						driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '2.jpg')]")).isDisplayed()
 						  			.then(function(present) {
 						  				expect(present).toBe(false);
@@ -122,7 +129,8 @@ module.exports = function(driver) {
 	});
 
 	it("should end on first element", function (done) {
-		driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='prev']")).click().then(function() {
+		driver.findElement(webdriver.By.xpath("//ns-slider//*[@id='prev']")).click();
+		driver.sleep(1000).then(function() {
 			driver.findElement(webdriver.By.xpath("//ns-slider//img[contains(@src, '1.jpg')]")).isDisplayed()
 				.then(function(present) {
 					expect(present).toBe(true);

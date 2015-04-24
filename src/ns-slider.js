@@ -57,16 +57,15 @@ var NsSlider = Polymer({
         },
 
         created: function() {
-
         },
 
         // Fires when the element’s initial set of children and siblings are guaranteevd to exist
         domReady: function() {
-
         },
 
         // Fires when the "<polymer-element>" has been fully prepared
         ready: function() {
+            this.querySelectorAll(".slide");
             this.elms = this.querySelectorAll(".slide");
             this.setVisibleElement(0);
             this.setButtons();
@@ -90,13 +89,16 @@ var NsSlider = Polymer({
             }
         },
         // Fires when the element was inserted into the document
-        attached: function() {},
+        attached: function() {
+        },
 
         // Fires when the element was removed from the document
-        detached: function() {},
+        detached: function() {
+        },
 
         // Fires when an attribute was added, removed, or updated
-        attributeChanged: function(attr, oldVal, newVal) {},
+        attributeChanged: function(attr, oldVal, newVal) {
+        },
 
         animate: function(startIndex, endIndex, callback) {
 
@@ -107,7 +109,7 @@ var NsSlider = Polymer({
             endElm.style.display = "block";
             endElm.style.position = "absolute";
             
-            var step = 20;
+            var step = 30;
             var direction = 1;
             
             var endPosition = startElm.offsetWidth;
