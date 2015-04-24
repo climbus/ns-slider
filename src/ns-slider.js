@@ -7,6 +7,7 @@ var NsSlider = Polymer({
         // Fires when an instance of the element is created
 
         setVisibleElement: function(index) {
+
             if (index >= this.elms.length || index < 0) {
                 return;
             }
@@ -65,8 +66,16 @@ var NsSlider = Polymer({
 
         // Fires when the "<polymer-element>" has been fully prepared
         ready: function() {
-            this.querySelectorAll(".slide");
-            this.elms = this.querySelectorAll(".slide");
+            var content = this.querySelector("#content");
+
+            this.elms = content.children;
+            
+            for (var i in this.elms) {
+                this.elms[i].className += " slide";
+            }
+
+            Polymer.dom.flush();
+
             this.setVisibleElement(0);
             this.setButtons();
 

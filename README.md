@@ -10,11 +10,11 @@ Place your elements in component content
 
 ```html
 	<ns_slider>
-		<div class="slide">
+		<div>
 			<img src="image1.jpg" />
 			<div class="title">Some title 1</div>
 		</div>
-		<div class="slide">
+		<div>
 			<img src="image2.jpg" />
 			<div class="title">Some title 2</div>
 		</div>
