@@ -3,6 +3,7 @@
 
 <dom-module id="ns-slider">
     <style type="text/css">
+
         #slider {
             position: relative;
             width: 1028px;
@@ -12,13 +13,32 @@
             overflow: hidden;
         }
 
-        ::content .title {
+        ::content .txtafter, ::content .txtbefore {
             position: absolute;
-            bottom:50px;
-            left: 50px;
+            width: 90%;
+            color: white;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        ::content .txtafter {
+            bottom: 0px;
+            left: 0px;
+        }
+
+        ::content .txtbefore {
+            top: 0px;
+            left: 0px;
+        }
+
+        ::content h3 {
             font-size: 24px;
             font-weight: bold;
-            color: white;
+            margin-top: 0px;
+        }
+
+        ::content p {
+            font-size: 18px;
         }
 
         .btn {

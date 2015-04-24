@@ -64,6 +64,40 @@ var NsSlider = Polymer({
         domReady: function() {
         },
 
+        packTextElements: function() {
+            for (var i=0; i < this.elms.length; i++) {
+                var txtElms = [];
+                for(var j=0; j < this.elms[i].children.length; j++) {
+                    if (this.elms[i].children[j].tagName == "IMG") {
+                        var img = this.elms[i].children[j];
+                        if (txtElms.length > 0) {
+                            var div = document.createElement("div");
+                            div.className = "txtbefore";
+                            
+                            this.elms[i].insertBefore(div, this.elms[i].children[j]);
+                            for (var k in txtElms) {
+                                div.appendChild(txtElms[k]);
+                            }
+                            txtElms = [];
+                        }
+                        continue;
+                    }
+                    if (this.elms[i].children[j] instanceof Node) {
+                        txtElms.push(this.elms[i].children[j]);
+                    }
+                }
+
+                if (txtElms.length > 0) {
+                    var div = document.createElement("div");
+                    div.className = "txtafter";
+                    for (var k in txtElms) {
+                        div.appendChild(txtElms[k]);
+                    }
+                    this.elms[i].appendChild(div);
+                }
+            }
+        },
+
         // Fires when the "<polymer-element>" has been fully prepared
         ready: function() {
             var content = this.querySelector("#content");
@@ -73,6 +107,8 @@ var NsSlider = Polymer({
             for (var i in this.elms) {
                 this.elms[i].className += " slide";
             }
+            
+            this.packTextElements();
 
             Polymer.dom.flush();
 

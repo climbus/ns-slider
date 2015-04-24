@@ -4,6 +4,44 @@ describe("ns-slider", function() {
 		expect(ns.is).toEqual("ns-slider");
 	});
 
+	it("should pack text elements after img", function() {
+		this.container = document.createElement('div');
+		this.container.innerHTML = "<ns-slider> \
+								<div class=\"slide\">\
+									<img src=\"#\" />\
+									<h3></h3>\
+									<p></p>\
+								</div>\
+							  </ns-slider>";
+		document.body.appendChild(this.container);
+		var ns = document.querySelector("ns-slider");
+		ns.packTextElements();
+		console.log(Polymer.dom(ns.querySelector(".slide")).children);
+		expect(ns.querySelector(".slide").children[0].tagName).toEqual("IMG");
+		expect(ns.querySelector(".slide").children[1].tagName).toEqual("DIV");
+		expect(ns.querySelector(".slide").children[1].className).toEqual("txtafter");
+		document.body.removeChild(this.container);
+	});
+
+	it("should pack text elements before img", function() {
+		this.container = document.createElement('div');
+		this.container.innerHTML = "<ns-slider> \
+								<div class=\"slide\">\
+									<h3></h3>\
+									<p></p>\
+									<img src=\"#\" />\
+								</div>\
+							  </ns-slider>";
+		document.body.appendChild(this.container);
+		var ns = document.querySelector("ns-slider");
+		ns.packTextElements();
+		console.log(Polymer.dom(ns.querySelector(".slide")).children);
+		expect(ns.querySelector(".slide").children[1].tagName).toEqual("IMG");
+		expect(ns.querySelector(".slide").children[0].tagName).toEqual("DIV");
+		expect(ns.querySelector(".slide").children[0].className).toEqual("txtbefore");
+		document.body.removeChild(this.container);
+	});
+
 	describe("inserted in html", function() {
 
 		beforeEach(function() {

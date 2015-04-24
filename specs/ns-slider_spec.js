@@ -27,7 +27,7 @@ module.exports = function(driver) {
   	});
 
   	it("should show title", function (done) {
-  		driver.findElement(webdriver.By.xpath("//ns-slider//div[contains(@class, 'title')]")).getText()
+  		driver.findElement(webdriver.By.xpath("//ns-slider//h3")).getText()
           .then(function(txt) {
               expect(txt).not.toBe("");
               done();
