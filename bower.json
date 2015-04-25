@@ -6,7 +6,11 @@
     "main": "dist/ns-slider.html",
     "keywords": [
         "polymer",
-        "web-components"
+        "web-components",
+        "slider",
+        "carousel",
+        "slide show",
+        "web component"
     ],
     "ignore": [
         "**/.*",
@@ -17,7 +21,7 @@
         "tests",
         "src",
         "spec",
-        "demo",
+        "demo"
     ],
     "dependencies": {
         "polymer": "Polymer/polymer#^0.8"
