@@ -1,6 +1,6 @@
 {
     "name": "ns-slider",
-    "version": "0.1",
+    "version": "0.1.1",
     "description": "Netstation slider web component",
     "license": "MIT",
     "main": "dist/ns-slider.html",
@@ -22,7 +22,7 @@
         "tests",
         "src",
         "spec",
-        "demo",
+        "demo"
     ],
     "dependencies": {
         "polymer": "Polymer/polymer#^0.8"
