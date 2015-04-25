@@ -1,6 +1,6 @@
 {
     "name": "ns-slider",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Netstation slider web component",
     "license": "MIT",
     "main": "dist/ns-slider.html",
