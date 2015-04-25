@@ -1,8 +1,8 @@
 {
     "name": "ns-slider",
-    "version": "0.0.1",
+    "version": "0.1",
     "description": "Netstation slider web component",
-    "license": "other",
+    "license": "MIT",
     "main": "dist/ns-slider.html",
     "keywords": [
         "polymer",
@@ -10,8 +10,14 @@
     ],
     "ignore": [
         "**/.*",
+        "Gruntfile.js",
+        "package.json",
         "node_modules",
-        "bower_components"
+        "bower_components",
+        "tests",
+        "src",
+        "spec",
+        "demo",
     ],
     "dependencies": {
         "polymer": "Polymer/polymer#^0.8"

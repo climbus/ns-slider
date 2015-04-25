@@ -1,0 +1,83 @@
+<!-- Import Polymer -->
+<link rel="import" href="../../polymer/polymer.html">
+
+<dom-module id="ns-slider">
+    <style type="text/css">
+
+        #slider {
+            position: relative;
+            width: 1028px;
+            height: 683px;
+            top: 0px;
+            left: 0px;
+            overflow: hidden;
+        }
+
+        ::content .txtafter, ::content .txtbefore {
+            position: absolute;
+            width: 90%;
+            color: white;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        ::content .txtafter {
+            bottom: 0px;
+            left: 0px;
+        }
+
+        ::content .txtbefore {
+            top: 0px;
+            left: 0px;
+        }
+
+        ::content h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 0px;
+        }
+
+        ::content p {
+            font-size: 18px;
+        }
+
+        .btn {
+            position: absolute;
+            font-size: 64px;
+            font-weight: bold;
+            color: #CCCCCC;
+        }
+
+        #next {
+            top: 50%;
+            right: 40px;
+        }
+
+        #prev {
+            top: 50%;
+            left: 40px;
+        }
+
+        ::content .slide {
+            display: none;
+        }
+
+        .btn.active {
+            cursor: pointer;
+            color: white;
+        }
+
+    </style>
+    <template>
+        <div id="slider">
+            <div id="content">
+                <content></content>
+            </div>
+            <a id="prev" class="btn">&lt;</a>
+            <a id="next" class="btn active">&gt;</a>
+        </div>
+    </template>
+</dom-module>
+
+<script src="./ns-slider.js"></script>
+

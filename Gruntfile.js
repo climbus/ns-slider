@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         'connect': {
             demo: {
                 options: {
-                    open: true,
+                    open: "http://0.0.0.0:8000/demo/",
                     keepalive: true
                 }
             },
@@ -35,7 +35,6 @@ module.exports = function(grunt) {
         },
         jasmine: {
             unittest: {
-              //src: ["src/ns-slider.js",],
               options: {
                 specs: "tests/**/*.js",
                 vendor: "bower_components/webcomponentsjs/webcomponents-lite.min.js",

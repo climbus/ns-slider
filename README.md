@@ -9,6 +9,10 @@ Usage
 Place your elements in component content
 
 ```html
+	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+	<link rel="import" href="bower_components/ns-slider/dist/ns-slider.html">
+
 	<ns_slider>
 		<div>
 			<img src="image1.jpg" />
