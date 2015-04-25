@@ -14,6 +14,7 @@
     ],
     "ignore": [
         "**/.*",
+        "**/_*",
         "Gruntfile.js",
         "package.json",
         "node_modules",
@@ -21,7 +22,7 @@
         "tests",
         "src",
         "spec",
-        "demo"
+        "demo",
     ],
     "dependencies": {
         "polymer": "Polymer/polymer#^0.8"
