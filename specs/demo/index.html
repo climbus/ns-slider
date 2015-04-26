@@ -4,79 +4,38 @@
     <meta charset="UTF-8">
     <title>&lt;ns-slider&gt;</title>
 
+    <script src="../../demo/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
     <style type="text/css">
     	body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #333333;
     	}
-
-        h1, h3 {
-            color: #999999;
-        }
-
-        h3 {
-            margin-top: 20px;
-        }
-
-        #code-container {
-            border: #cccccc solid 1px;
-            overflow: hidden;
-            width: 988px;
-            padding: 20px;
-            text-overflow: ellipsis;
-            background-color: #cccccc;
-            font-size: 16px;
-        }
-
-        #content {
-            margin: auto;
-            width: 1048px;
-        }
-
-        paper-button {
-            background: #cccccc;
-            color: #333333;
-        }
     </style>
-    <!-- 1. Load webcomponents.min.js for polyfill support. -->
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-
-    <link rel="import" href="bower_components/ns-slider/dist/ns-slider.html">
+    
+    <link rel="import" href="../../src/ns-slider.html">
 
 </head>
 <body>
-    <div id="content">
-        <h1>This is the ns-slider demo</h1>
-        <div id="slider-container"></div>
-        <h3>code:</h3>
-        <pre id="code-container"></pre>
-    </div>
-    <template id="type1">
+
+    <h1>This is slider demo</h1>
+    
     <ns-slider>
     	<div>
-            <img src="images/1.jpg" />
             <h3>Slider title 1</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis justo nec felis scelerisque elementum. Quisque in ipsum eget purus consectetur posuere vel sed quam. Nulla facilisi. In in efficitur velit. Aenean fringilla finibus nibh vitae congue. Curabitur dictum sem at arcu suscipit, vitae gravida odio sollicitudin. Nullam sed tellus at odio tincidunt dictum at at lorem. Pellentesque euismod nisl quis nunc molestie imperdiet.</p>
-            
+            <img src="../demo/images/1.jpg" />
         </div>
         <div>
-            <img src="images/2.jpg" />
+            <img src="../demo/images/2.jpg" />
             <h3>Slider title 2</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis justo nec felis scelerisque elementum. Quisque in ipsum eget purus consectetur posuere vel sed quam. Nulla facilisi. In in efficitur velit. Aenean fringilla finibus nibh vitae congue. Curabitur dictum sem at arcu suscipit, vitae gravida odio sollicitudin. Nullam sed tellus at odio tincidunt dictum at at lorem. Pellentesque euismod nisl quis nunc molestie imperdiet.</p>
         </div>
         <div>
-            <img src="images/3.jpg" />
+            <img src="../demo/images/3.jpg" />
             <h3>Slider title 3</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis justo nec felis scelerisque elementum. Quisque in ipsum eget purus consectetur posuere vel sed quam. Nulla facilisi. In in efficitur velit. Aenean fringilla finibus nibh vitae congue. Curabitur dictum sem at arcu suscipit, vitae gravida odio sollicitudin. Nullam sed tellus at odio tincidunt dictum at at lorem. Pellentesque euismod nisl quis nunc molestie imperdiet.</p>
         </div>
     </ns-slider>
-    </template>
-    <script type="text/javascript">
-        var template = document.getElementById('type1');
-        var slider =  document.getElementById('slider-container');
-        var code = document.getElementById("code-container");
-        code.innerHTML = template.innerHTML.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        slider.appendChild(document.importNode(template.content, true));
-    </script>
+
 </body>
 </html>

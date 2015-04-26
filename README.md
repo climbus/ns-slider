@@ -26,3 +26,5 @@ Place your elements in component content
 		</div>
 	</ns-slider>
 ```
+
+Demo: http://slider.netstation.pl/

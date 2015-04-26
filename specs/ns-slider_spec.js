@@ -4,7 +4,7 @@ module.exports = function(driver) {
   describe("ns-slider", function() {
   	
   	beforeEach(function(done) {
-  		driver.get('http://localhost:8001/demo/');
+  		driver.get('http://localhost:8001/specs/demo/');
   		driver.sleep(500).then(function() {
   			done();	
   		});

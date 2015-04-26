@@ -1,0 +1,20 @@
+{
+  "name": "ns-slider demo",
+  "version": "0.1",
+  "homepage": "https://github.com/climbus/ns-slider",
+  "authors": [
+    "Climbus <climbus@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-button": "PolymerElements/paper-button#~0.8.1",
+    "ns-slider": "~0.1.2"
+  }
+}
